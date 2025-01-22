@@ -1,0 +1,104 @@
+/*/* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}*/
+
+.nav1{
+    position: fixed;
+    width: 100%;
+
+    background: #0c56d6;
+    height: 80px;
+    color: #fff;
+    z-index: 9;
+}
+
+.nav-container1{
+    display: flex;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: #530c0c;*/
+}
+
+.nav1 .logo{
+    width: 80px ;
+}
+
+/*.nav-input:checked + .nav-menu{
+    background: tomato;
+}*/
+
+.nav-label, .nav-input{
+    display: none;
+}
+
+.nav1 .fa-bars{
+    color: #fff;
+    font-size: 25px;
+}
+
+.nav-menu1{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3em;
+   /* background-color: #a49292;*/
+}
+ .nav-item{
+    color: #fff;
+    text-decoration: none;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    transition: 0.5s;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-item::after{
+    content: "";
+    display: block;
+    background: #fff;
+    width: 90%;
+    margin-top: 3px;
+    height: 3px;
+    clip-path: var(--clippy);
+    transition: clip-path 0.5s;
+}
+
+.nav-item:hover{
+    --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    color: #FED17E;
+}
+
+@media(max-width: 700px){  
+    .nav-label{
+        display: block;
+        cursor: pointer;
+    }
+    .nav-menu1{
+        background-color: #000;
+        position: fixed;
+        top: 80px;
+        bottom: 0;
+        background-color: #e0a333;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        clip-path: circle(0 at center);
+        transition: clip-path 1s ease-in-out;
+}
+
+    .nav-input:checked + .nav-menu1{
+        clip-path: circle(100% at center);
+    }
+}
